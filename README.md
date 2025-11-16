@@ -15,7 +15,7 @@ Below are the questions I want to answer in my project:
 
 # Tools I Used
 
-For my deep dive into the data analyst job market, I harnessed the power of several key tools:
+For my deep dive into the data analyst job market, I utilized several key tools:
 
 - **Python:** The backbone of my analysis, allowing me to analyze the data and find critical insights.I also used the following Python libraries:
     - **Pandas Library:** This was used to analyze the data. 
