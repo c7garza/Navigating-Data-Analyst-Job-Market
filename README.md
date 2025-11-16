@@ -165,49 +165,47 @@ To identify the most optimal skills to learn ( the ones that are the highest pai
 
 View my notebook with detailed steps here: [5_Optimal_Skills](5_Optimal_Skills.ipynb).
 
-#### Visualize Data
 
-```python
-from adjustText import adjust_text
-import matplotlib.pyplot as plt
-
-plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
-plt.show()
-
-```
-
-#### Results
-
-![Most Optimal Skills for Data Analysts in the US](images/optimal%20skills_non_color.png)    
-*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the US.*
-
-#### Insights:
-
-- The skill `Oracle` appears to have the highest median salary of nearly $100K, despite being less common in job postings. This suggests a high value placed on specialized database skills.
-
-- More commonly required skills like `Excel` and `SQL` have a large presence in job listings but lower median salaries compared to specialized skills like `Python` and `Tableau`, which not only have higher salaries but are also moderately prevalent in job listings.
-
-- Skills such as `Python`, `Tableau`, and `SQL` are towards the higher end of the salary spectrum while also being fairly common in job listings, indicating that proficiency in these tools can lead to good opportunities.
-
-### Visualizing Different Techonologies
+### Visualizing Data & Techonologies
 
 Let's visualize the different technologies as well in the graph. We'll add color labels based on the technology (e.g., {Programming: Python})
 
 #### Visualize Data
 
 ```python
-from matplotlib.ticker import PercentFormatter
-
-# Create a scatter plot
-scatter = sns.scatterplot(
+sns.scatterplot(
     data=df_DA_skills_tech_high_demand,
     x='skill_percent',
     y='median_salary',
-    hue='technology',  # Color by technology
-    palette='bright',  # Use a bright palette for distinct colors
-    legend='full'  # Ensure the legend is shown
+    hue='technology'
 )
+
+sns.despine()
+sns.set_theme(style='ticks')
+
+# Prepare texts for adjustText
+texts = []
+for i, txt in enumerate(df_DA_skills_high_demand.index):
+    texts.append(plt.text(df_DA_skills_high_demand['skill_percent'].iloc[i], df_DA_skills_high_demand['median_salary'].iloc[i], txt))
+
+# Adjust text to avoid overlap
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray'))
+
+# Set axis labels, title, and legend
+plt.xlabel('Percent of Data Analyst Jobs')
+plt.ylabel('Median Yearly Salary')
+plt.title('Most Optimal Skills for Data Analysts in the US')
+plt.legend(title='Technology')
+
+from matplotlib.ticker import PercentFormatter
+ax = plt.gca()
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
+
+# Adjust layout and display plot
+plt.tight_layout()
 plt.show()
+
 
 ```
 
