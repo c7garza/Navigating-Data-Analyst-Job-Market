@@ -25,39 +25,6 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 - **Visual Studio Code:** My go-to for executing my Python scripts.
 - **Git & GitHub:** Essential for version control and sharing my Python code and analysis, ensuring collaboration and project tracking.
 
-# Data Preparation and Cleanup
-
-This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability.
-
-## Import & Clean Up Data
-
-I start by importing necessary libraries and loading the dataset, followed by initial data cleaning tasks to ensure data quality.
-
-```python
-# Importing Libraries
-import ast
-import pandas as pd
-import seaborn as sns
-from datasets import load_dataset
-import matplotlib.pyplot as plt  
-
-# Loading Data
-dataset = load_dataset('lukebarousse/data_jobs')
-df = dataset['train'].to_pandas()
-
-# Data Cleanup
-df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
-df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
-```
-
-## Filter US Jobs
-
-To focus my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the United States.
-
-```python
-df_US = df[df['job_country'] == 'United States']
-
-```
 
 # The Analysis
 
