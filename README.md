@@ -225,11 +225,11 @@ plt.show()
 
 # Conclusion
 
-- **Skill Demand and Salary Correlation**: There is a clear correlation between the demand for specific skills and the salaries these skills command. Advanced and specialized skills like Python, AWS, and Oracle often lead to higher salaries.
-- **Market Trends**: There are changing trends in skill demand, highlighting the dynamic nature of the data job market. Keeping up with these trends is essential for career growth in data analytics.
-- **Economic Value of Skills**: Understanding which skills are both in-demand and well-compensated can guide data analysts in prioritizing learning to maximize their economic returns.
+- **Skill Demand and Salary Correlation**: There is a clear correlation between the demand for specific skills and their salaries. Advanced and specialized skills like Python, AWS, and Oracle often lead to higher salaries.
+- **Market Trends**: There are changing trends in skill demand, highlighting the dynamic nature of the data job market. Keeping up with these trends is essential for career growth.
+- **Economic Value of Skills**: Understanding which skills are both in-demand and well-compensated can guide data analysts in prioritizing learning to maximize their earning potential.
 
 
-This analysis of the data analyst job market highlights the skills and tools that can make the biggest impact on someone’s career growth. For those entering the field, focusing on SQL, Excel, Python, and a visualization tool like Tableau or Power BI will provide the strongest foundation for landing a first role. For current data analysts looking to increase their earning potential, developing expertise in cloud platforms like AWS or Oracle can be especially valuable. As the market continues to evolve, this project serves as a strong starting point and reinforces the importance of staying informed and continuously learning in the data field.
+This analysis of the Data Analyst job market highlights the skills and tools that can make the biggest impact on someone’s career growth. For those entering the field, focusing on SQL, Excel, Python, and a visualization tool like Tableau or Power BI will provide the strongest foundation for landing a first role. For current Data Analysts looking to increase their earning potential, developing expertise in cloud platforms like AWS or Oracle can be especially valuable. As the market continues to evolve, this analysis serves as a strong starting point and reinforces the importance of continuously learning in the data field.
 
 
